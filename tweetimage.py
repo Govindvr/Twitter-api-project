@@ -1,8 +1,10 @@
+import os
 import tweepy
 from PIL import Image, ImageDraw, ImageFont
+from dotenv import load_dotenv
 
-bearer_token = 'AAAAAAAAAAAAAAAAAAAAADURbgEAAAAAmJA3AbMoolA0gaQxvkXfFh573zQ%3DJXyt2yLvIDTzxjVrC4uPK8MMYTCWTyP9ErwKyPUsrNtElJb7Yc'
-
+load_dotenv() 
+bearer_token = os.getenv("bearer_token")
 client = tweepy.Client(bearer_token=bearer_token)
 
 url = input("Enter the url: ")
